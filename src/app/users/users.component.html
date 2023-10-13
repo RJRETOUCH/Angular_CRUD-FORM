@@ -1,0 +1,98 @@
+<div class="container mt-2">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" href="#home" data-bs-toggle="tab"
+                data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                aria-selected="true">Add User</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" href="profile" data-bs-toggle="tab"
+                data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
+                aria-selected="false">User List</button>
+        </li>
+
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+            tabindex="0">
+            <form action="" [formGroup]="userForm" (ngSubmit)="SubmitForm()">
+                <div class="row mt-2 d-flex">
+                    <div class="form-group col-md-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Name</label>
+                            <input type="text" class="form-control" name="Name" formControlName="Name"
+                                id="exampleFormControlInput1" placeholder="Enter Name">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Mobile</label>
+                            <input type="number" class="form-control" name="Mobile" formControlName="Mobile"
+                                id="exampleFormControlInput1" placeholder="Enter Mobile no.">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2 d-flex">
+                    <div class="form-group col-md-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="Email" formControlName="Email"
+                                id="exampleFormControlInput1" placeholder="Enter email">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Age</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput1" name="Age"
+                                formControlName="Age" placeholder="Enter Age">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 mt-2 d-flex justify-content-end">
+
+                    <button type="submit" class="btn btn-primary">Add</button>
+
+
+                    <button type="reset" class="btn ms-1 me-1  btn-secondary">Reset</button>
+
+                </div>
+            </form>
+        </div>
+        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of users; i:index;">
+                        <th scope="row">{{item.id}}</th>
+                        <th scope="row">{{item.Name}}</th>
+                        <td>{{item.Email}}</td>
+                        <td>{{item.Mobile}}</td>
+                        <td>{{item.Age}}</td>
+
+                        <td>
+                            <button type="button" class="btn btn-primary" (click)="GetUserByID(item.id)">Edit</button>
+
+                            <button type="button" class="btn btn-danger m-2"
+                                (click)="DeleteConfirmation(item.id)">Delete</button>
+
+
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,39 @@
+{
+  "Users": [
+    {
+      "id": 1,
+      "Name": "Wanshika Raj",
+      "Email": "Wash074@gmail.com",
+      "Mobile": 8308630,
+      "Age": 17
+    },
+    {
+      "Name": "Rajneesh Kushwaha",
+      "Mobile": 4742536,
+      "Email": "kushwaharajneesh074@gmail.com",
+      "Age": 29,
+      "id": 2
+    },
+    {
+      "Name": "Arun Kumar",
+      "Mobile": 7006698,
+      "Email": "ArunK11@gmail.com",
+      "Age": 32,
+      "id": 3
+    },
+    {
+      "Name": "Aarti Kush",
+      "Mobile": 7845123,
+      "Email": "aarti121@gmail.com",
+      "Age": 32,
+      "id": 4
+    },
+    {
+      "Name": "Aarna",
+      "Mobile": 7784512,
+      "Email": "GuptaArna@gmail.com",
+      "Age": 74,
+      "id": 5
+    }
+  ]
+}
